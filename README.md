@@ -2,6 +2,34 @@
 
 Proyecto de automatización E2E con **Playwright**, **TypeScript** y patrón **Page Object Model (POM)**. Incluye integración con **Allure Report** para reportes HTML.
 
+## Que hace este proyecto
+
+Automatiza pruebas E2E sobre **Sauce Demo** (https://www.saucedemo.com), una app de demo tipo e-commerce:
+
+| Prueba | Descripcion |
+|--------|-------------|
+| Login exitoso | Usuario valido redirige a inventario y se listan productos. |
+| Login fallido | Credenciales invalidas muestran mensaje de error. |
+| Inventario | Tras login, la pagina de productos carga correctamente. |
+| Logout | Cerrar sesion redirige de vuelta al login. |
+
+Sirve como **proyecto de portafolio** porque demuestra: uso de POM, TypeScript, selectores accesibles, configuracion multi-navegador (Chromium, Firefox, WebKit) y reportes con Allure.
+
+## Prueba rapida (para tu portafolio)
+
+En la raiz del proyecto:
+
+```bash
+npm install
+npx playwright install
+npm run test
+```
+
+Para ver el navegador mientras corren los tests: `npm run test:headed`.  
+Para abrir la UI de Playwright (depurar, ver trazas): `npm run test:ui`.
+
+Si tienes Allure instalado, tras ejecutar los tests puedes generar el reporte HTML con `npm run report` y adjuntar capturas del reporte en tu portafolio.
+
 ## Requisitos
 
 - Node.js 18+
